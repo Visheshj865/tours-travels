@@ -5,6 +5,8 @@ import Home from "./routes/Home";
 import About from "./routes/About";
 import Service from "./routes/Service";
 import Contact from "./routes/Contact";
+import Signupform from "./component/Signupform";
+import Loginform from "./component/Loginform";
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/service" element={<Service />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/signup" element={<Signupform />}></Route>
+        <Route path="/login" element={<Loginform />}></Route>
       </Routes>
 
-      <Navbar />
+      {/* <Navbar /> */}
     </div>
   );
 }

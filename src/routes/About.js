@@ -1,11 +1,17 @@
 import React from "react";
 import Navbar from "../component/Navbar";
+import Hero from "../component/Hero";
+import Night from "../assets/night.jpg";
+import Aboutus from "../component/Aboutus";
+import Footer from "../component/Footer";
 
 function About() {
   return (
     <div>
       <Navbar />
-      <h1>This is About</h1>
+      <Hero cName="hero-mid" heroimg={Night} title="About" />
+      <Aboutus />
+      <Footer />
     </div>
   );
 }

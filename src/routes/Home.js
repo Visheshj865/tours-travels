@@ -1,7 +1,12 @@
 import React from "react";
 import Navbar from "../component/Navbar";
 import Hero from "../component/Hero";
+// import "../component/Hero.css";
 import heroimg from "../assets/12.jpg";
+import Destinations from "../component/Destinations";
+import Trip from "../component/Trip";
+import Footer from "../component/Footer";
+// import Destination from "../component/destination";
 function Home() {
   return (
     <>
@@ -15,6 +20,9 @@ function Home() {
         url="/"
         btnclass="show"
       />
+      <Destinations />
+      <Trip />
+      <Footer />
     </>
   );
 }

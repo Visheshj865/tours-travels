@@ -47,9 +47,9 @@ class Navbar extends Component {
             </li>
             <li>
               {/* <Link>Home</Link> */}
-              <a className="nav-links-signup">
+              <Link to="/signup" className="nav-links-signup">
                 <i className="fa-solid fa-right-to-bracket"></i>Sign Up
-              </a>
+              </Link>
             </li>
             {/* <div id="mobile" onClick={this.handleclick}>
               <i
