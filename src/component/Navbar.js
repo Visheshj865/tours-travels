@@ -23,7 +23,7 @@ class Navbar extends Component {
           <ul className={this.state.clicked ? "nav-menu active" : "nav-menu"}>
             <li>
               {/* <Link>Home</Link> */}
-              <Link to="/">
+              <Link to="/home">
                 <i className="fa-solid fa-house"></i>Home
               </Link>
             </li>

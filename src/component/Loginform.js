@@ -1,63 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import "./Login.css";
+import "./Login.css";
 import logo from "../assets/1.jpg";
 import img4 from "../assets/4.jpg";
-
+import { NavLink, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import Spinner from "react-bootstrap/Spinner";
 function Loginform() {
+  const [email, setEmail] = useState("");
+
+  //send otp
+
+  const sendOtp = (e) => {
+    e.preventDefault();
+
+    //validation
+
+    if (email === "") {
+      toast.error("Enter Your Email Id");
+    } else if (!email.includes("@")) {
+      toast.error("Enter Valid Email Id !");
+    } else {
+      toast.success("Login Success");
+    }
+  };
   return (
-    <section className="h-100 bg-dark">
-      <div className="container py-5 h-100">
-        <div className="row h-100" style={{ height: "50vh" }}>
-          <div className="col">
-            <div className="card card-registration">
-              <div className="row">
-                <div className="col-xl-6 d-none d-xl-block">
-                  <img src={img4} />
-                </div>
-                <div className="col-xl-6">
-                  <div className="card-body p-md-5 text-black">
-                    <h3 className="mb-4 text-uppercase">Trippy</h3>
-                    <h5 className="mb-4 text-uppercase">Login</h5>
-
-                    <div className="form-outline mb-4">
-                      <input
-                        type="email"
-                        id="form3Example8"
-                        className="form-control form-control-lg"
-                      />
-                      <label className="form-label" htmlFor="form3Example8">
-                        Email Id
-                      </label>
-                    </div>
-
-                    <div className="form-outline mb-4">
-                      <input
-                        type="text"
-                        id="form3Example97"
-                        className="form-control form-control-lg"
-                      />
-                      <label className="form-label" htmlFor="form3Example97">
-                        Password
-                      </label>
-                    </div>
-                    <div className="d-flex justify-content">
-                      <button type="button" className="btn btn-success">
-                        Login
-                      </button>
-                    </div>
-                    <div className="d-flex justify-content mt-4 logintext">
-                      <p>
-                        Already a Member ? <Link to="/signup">Login</Link>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <section>
+      <div className="form_data">
+        <div className="form_heading">
+          <h1>Welcome Back, Log In</h1>
+          <p>Hi, we are you glad you are back. Please login.</p>
         </div>
+        <form>
+          <div className="form_input">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id=""
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter Your Email Address"
+            />
+          </div>
+          <Link to="/otp">
+            {" "}
+            <button className="btn" onClick={sendOtp}>
+              Login
+            </button>
+          </Link>
+          <p>
+            Don't have and account <Link to="/signup">Sing up</Link>{" "}
+          </p>
+        </form>
       </div>
+      <ToastContainer />
     </section>
   );
 }
